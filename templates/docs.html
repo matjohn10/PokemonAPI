@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/index.css" />
+    <title>Pokemon API App</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container doc-nav">
+        <h1>Documentation</h1>
+        <ul class="doc-nav-ul">
+          <li><a href="/">Home</a></li>
+          <li><a href="/docs">Documentation</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="gif-image-container">
+      <img
+        src="https://media.tenor.com/UiYNpN4hUe0AAAAi/pikachu-pokemon.gif"
+        alt="https://media.tenor.com/UiYNpN4hUe0AAAAi/pikachu-pokemon.gif"
+      />
+    </div>
+    <div class="break-line"></div>
+    <div class="main-docu-container">
+      <h2 id="intro-h1">Introduction</h2>
+      <p class="intro-p">
+        Welcome to the Pokémon API documentation. This API provides basic
+        information about Pokémon species, including their names, types, and
+        strengths and weaknesses.
+      </p>
+      <h2>Responses</h2>
+      <p>
+        The API responds with JSON objects. To vizualise the objects returned,
+        please visit the home page and test the API's capabilities.
+      </p>
+
+      <h2>Base URL</h2>
+      <p>The base URL for all API requests:</p>
+      <code>http://127.0.0.1:5000/api/</code>
+
+      <h2>Endpoints</h2>
+      <p>The following endpoints are available:</p>
+      <div class="endpoints-container">
+        <h3>- Get All Informations</h3>
+        <p class="pad-left" class="pad-left">
+          Get a list of all information available in this API.
+        </p>
+        <code>GET /</code>
+
+        <h3>- Get All Pokemons</h3>
+        <p class="pad-left">Get a list of all pokemons</p>
+        <code>GET /pokemons</code>
+
+        <h3>- Get Pokémon by ID</h3>
+        <p class="pad-left">
+          Get detailed information about a specific Pokémon by its ID.
+        </p>
+        <code>GET /pokemons/{id}</code>
+
+        <h3>- Get Pokémon by Name</h3>
+        <p class="pad-left">
+          Get detailed information about a specific Pokémon by its name.
+        </p>
+        <code>GET /pokemons/{name}</code>
+
+        <h3>- Get All Descriptions of Pokemons</h3>
+        <p class="pad-left">
+          Get a list of detailed descriptions of all pokemons
+        </p>
+        <code>GET /description</code>
+
+        <h3>- Get Specific Description of Pokemon</h3>
+        <p class="pad-left">Get the detailed description of a pokemon</p>
+        <code>GET /description/{name or id}</code>
+
+        <h3>- Get All Pokemons per Type</h3>
+        <p class="pad-left">
+          Get a list of types objects that contain every pokemon of that type.
+        </p>
+        <code>GET /types</code>
+
+        <h3>- Get Pokemons for a Specific Type</h3>
+        <p class="pad-left">Get a list of all pokemons of that type.</p>
+        <code>GET /types/{type}</code>
+
+        <h3>- Get Types Combat Strengths and Weaknesses</h3>
+        <p class="pad-left">
+          Get a list of types object that contains the types they are strong
+          against and the types they are weak againts.
+        </p>
+        <code>GET /types-combat</code>
+
+        <h3>- Get Specific Type Combat Strengths and Weaknesses</h3>
+        <p class="pad-left">
+          Get the type's types they are strong against and the types they are
+          weak againts.
+        </p>
+        <code>GET /types-combat/{type}</code>
+      </div>
+    </div>
+  </body>
+</html>

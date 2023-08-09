@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" style="margin: 0; padding: 0; height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <title>Pokemon API App</title>
+  </head>
+  <body style="margin: 0; padding: 0; height: 100%; background-color: #0f171f">
+    <div class="page-container">
+      <h1 id="header">Welcome to my Pokemon API!!!</h1>
+
+      <nav>
+        <div class="nav-container">
+          <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="/docs">Documentation</a>
+            </li>
+            <li>
+              <a
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-expanded="false"
+                >Search</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a id="pokemon-link" class="dropdown-item" href="#"
+                    >Pokemons</a
+                  >
+                </li>
+                <li>
+                  <a id="types-link" class="dropdown-item" href="#"
+                    >Pokemon per types</a
+                  >
+                </li>
+                <li>
+                  <a id="combat-link" class="dropdown-item" href="#"
+                    >Types Combat Abilities</a
+                  >
+                </li>
+                <li>
+                  <a id="descriptions-link" class="dropdown-item" href="#"
+                    >Descriptions</a
+                  >
+                </li>
+                <li>
+                  <a id="images-link" class="dropdown-item" href="#">Images</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="break-line"></div>
+      <div class="main-container">
+        <main>
+          <section class="search-area">
+            <div class="display-container">
+              <form class="api-form" id="api-form">
+                <div class="form-container">
+                  <label for="apiExample" class="form-label"
+                    >Test the API:</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="apiExample"
+                    aria-describedby="apiSubscript"
+                    value="http://127.0.0.1:5000/api/"
+                  />
+                  <div id="apiSubscript" class="form-text">
+                    Test my API to see what it can do!!
+                  </div>
+                </div>
+                <button type="submit" class="form-btn" id="form-btn">
+                  Test
+                </button>
+              </form>
+              <div class="display-data" id="display-data">
+                <p>Data will display here...</p>
+                <br /><br /><br /><br /><br /><br /><br />
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script type="text/javascript" src="../static/index.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
