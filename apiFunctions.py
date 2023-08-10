@@ -26,7 +26,7 @@ TYPES = ['Normal',
 'Steel',
 'Fairy']
 
-conn = create_engine(url=f'mysql+pymysql://{os.getenv("DEV_USER")}:{os.getenv("DEV_PWD")}@0.0.0.0/0:3306/{os.getenv("DB_NAME")}')
+conn = create_engine(url=f'mysql+pymysql://{os.getenv("DEV_USER")}:{os.getenv("DEV_PWD")}@221.152.117.194:3306/{os.getenv("DB_NAME")}')
 select_pokemons = 'SELECT * FROM pokemons'
 select_types = 'SELECT * FROM types'
 select_images = 'SELECT * FROM poke_images'
