@@ -77,19 +77,19 @@ async function createAccordion() {
 function handleLink(e) {
   e.preventDefault();
   if (this.id.includes("pokemon")) {
-    input.value = "http://127.0.0.1:5000/api/pokemons";
+    input.value = "https://pokeinfo-api.onrender.com/api/pokemons";
     btn.click();
   } else if (this.id.includes("types")) {
-    input.value = "http://127.0.0.1:5000/api/types";
+    input.value = "https://pokeinfo-api.onrender.com/api/types";
     btn.click();
   } else if (this.id.includes("combat")) {
-    input.value = "http://127.0.0.1:5000/api/types-combat";
+    input.value = "https://pokeinfo-api.onrender.com/api/types-combat";
     btn.click();
   } else if (this.id.includes("descriptions")) {
-    input.value = "http://127.0.0.1:5000/api/description";
+    input.value = "https://pokeinfo-api.onrender.com/api/description";
     btn.click();
   } else {
-    input.value = "http://127.0.0.1:5000/api/image-paths";
+    input.value = "https://pokeinfo-api.onrender.com/api/image-paths";
     btn.click();
   }
 }
