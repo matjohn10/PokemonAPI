@@ -101,7 +101,7 @@ function handleLink(e) {
 const handleClick = (e) => {
   e.preventDefault();
   const newId = Math.floor(Math.random() * (1008 - 1) + 1);
-  const newURL = `${DEV_DOMAIN}pokemon-images/${newId}/show`;
+  const newURL = `${DEPLOYED_DOMAIN}pokemon-images/${newId}/show`;
   console.log(newURL);
   window.location.replace(newURL);
 };
