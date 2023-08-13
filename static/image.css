@@ -1,0 +1,253 @@
+:root {
+  --background-color: #0f171f;
+  --primary-btn: #3a5673;
+  --sec-btn: #1b2836;
+  --accent-color: #324962;
+  --text-color: #e0e8f0;
+}
+
+#Normal {
+  background-color: #9f9f7a;
+}
+
+#Fire {
+  background-color: hsl(26, 85%, 56%);
+}
+
+#Water {
+  background-color: hsl(221, 82%, 66%);
+}
+
+#Electric {
+  background-color: hsl(48, 93%, 57%);
+}
+
+#Grass {
+  background-color: hsl(98, 52%, 54%);
+}
+
+#Ice {
+  background-color: hsl(177, 47%, 72%);
+}
+
+#Fighting {
+  background-color: hsl(2, 66%, 46%);
+}
+
+#Poison {
+  background-color: #a33ea1;
+}
+
+#Ground {
+  background-color: #e2be65;
+}
+
+#Flying {
+  background-color: #ab90f3;
+}
+
+#Psychic {
+  background-color: #f95385;
+}
+
+#Bug {
+  background-color: #a5b71a;
+}
+
+#Rock {
+  background-color: #b5a036;
+}
+
+#Ghost {
+  background-color: #745798;
+}
+
+#Dragon {
+  background-color: #6e36fc;
+}
+
+#Dark {
+  background-color: #715847;
+}
+
+#Steel {
+  background-color: #b6b6cd;
+}
+
+#Fairy {
+  background-color: #d685ad;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--background-color);
+}
+
+.main-pokeimg-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  height: 100%;
+  margin: 0 5rem;
+}
+
+.random-btn {
+  font-size: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--primary-btn);
+  color: whitesmoke;
+}
+
+.random-btn:hover {
+  background-color: var(--accent-color);
+  cursor: pointer;
+  box-shadow: 0px 0px 11px 1px rgba(224, 232, 240, 0.75);
+  -webkit-box-shadow: 0px 0px 11px 1px rgba(224, 232, 240, 0.75);
+  -moz-box-shadow: 0px 0px 11px 1px rgba(224, 232, 240, 0.75);
+}
+
+.random-btn:active {
+  background-color: var(--text-color);
+  color: var(--accent-color);
+  box-shadow: 0px 0px 11px 1px rgb(224, 232, 240);
+  -webkit-box-shadow: 0px 0px 11px 1px rgb(224, 232, 240);
+  -moz-box-shadow: 0px 0px 11px 1px rgb(224, 232, 240);
+}
+
+.pokeimg-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  border: 5px solid whitesmoke;
+  width: 23rem;
+  height: 29rem;
+}
+
+.pokeimg {
+  overflow: hidden;
+  width: 90%;
+}
+
+.pokeimg > img {
+  max-width: 100%;
+}
+
+.pokename {
+  color: whitesmoke;
+  font-size: 1.75rem;
+  font-weight: bold;
+  padding-top: 1rem;
+}
+
+.pokeimg-info-container {
+  display: flex;
+  gap: 2rem;
+  padding-top: 1.1rem;
+}
+
+p {
+  text-align: center;
+  font-size: large;
+  width: 65px;
+  margin: 0;
+  padding: 5px 10px;
+  background-color: var(--primary-btn);
+  color: whitesmoke;
+  border-radius: 10px;
+}
+
+.other-pokeimg-container {
+  height: 10rem;
+  width: 80%;
+  border: 2px solid white;
+}
+
+.svg-arrow {
+  position: absolute;
+  left: 1rem;
+  top: 4rem;
+}
+
+.svg-arrow-img:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+.svg-arrow-img:active {
+  opacity: 0.5;
+}
+
+.random-h1 {
+  color: whitesmoke;
+  margin: 0;
+  padding: 0;
+}
+
+/* FLIP CARD CSS */
+.flip-card {
+  background-color: transparent;
+  width: 21rem;
+  height: 29rem;
+  border-radius: 15px;
+  border: 5px solid whitesmoke;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: whitesmoke;
+}
+
+/* Style the back side */
+.flip-card-back {
+  display: flex;
+  color: whitesmoke;
+  transform: rotateY(180deg);
+}
+
+.poke-combat {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  align-items: center;
+  width: 50%;
+}
+
+.poke-combat > h2 {
+  color: whitesmoke;
+  padding-top: 2rem;
+}
