@@ -13,7 +13,10 @@ Pokemon AI generated descriptions
     - /api/types-combat
     - /api/description
 - Documentation (/docs) to access the documentation of the api
-    - Can be accessed from the main website (/)
+    - Can be accessed from the main website in the navigation panel (/)
+- Randomizer (/pokemon-images/{id or name}/show) to get a random pokemon and its strength and weakness types
+    - Can be accessed from the main website in the navigation panel (/)
+    - Flip card animation HTML/CSS (https://www.w3schools.com/howto/howto_css_flip_card.asp)
 
 ### Extra Info
 *Data was extracted from the website "https://www.pokemon.com/us"
