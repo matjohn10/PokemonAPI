@@ -8,6 +8,10 @@ const typesLink = document.querySelector("#types-link");
 const combatLink = document.querySelector("#combat-link");
 const descriptionsLink = document.querySelector("#descriptions-link");
 const imagesLink = document.querySelector("#images-link");
+const randomLink = document.querySelector("#random-link");
+
+const DEV_DOMAIN = "http://127.0.0.1:5000/";
+const DEPLOYED_DOMAIN = "https://pokeinfo-api.onrender.com/";
 
 async function handleSubmit(e) {
   e.preventDefault();
@@ -94,6 +98,15 @@ function handleLink(e) {
   }
 }
 
+const handleClick = (e) => {
+  e.preventDefault();
+  const newId = Math.floor(Math.random() * (1008 - 1) + 1);
+  const newURL = `${DEV_DOMAIN}pokemon-images/${newId}/show`;
+  console.log(newURL);
+  window.location.replace(newURL);
+};
+
+randomLink.addEventListener("click", handleClick);
 pokemonLink.addEventListener("click", handleLink);
 typesLink.addEventListener("click", handleLink);
 combatLink.addEventListener("click", handleLink);
