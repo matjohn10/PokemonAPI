@@ -1,4 +1,5 @@
 # PokemonAPI
+Web URL: https://pokeinfo-api.onrender.com (might take a second reload, render.com free tier has a slow first connection)
 Made using Flask, MySQL
 Pokemon IDs, name, types
 Types strength and weaknesses
