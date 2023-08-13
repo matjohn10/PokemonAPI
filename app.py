@@ -88,7 +88,7 @@ def get_img_id(img_id: str):
         else:
             return jsonify({'error': 'Not supported path.', 'endpoint': f'/api/pokemon-images/{img_id}'})
 
-@app.route('/api/pokemon-images/<img_id>/show')
+@app.route('/pokemon-images/<img_id>/show')
 def show_img(img_id):
     try:
         # img_url = POKEMONS.image_from_id(img_id)
@@ -96,12 +96,20 @@ def show_img(img_id):
         if i < 0 or i > 1008:
             return jsonify({'Error': 'OUT OF BOUNDS INDEX'}), 404
         path = f'img/pokemon{img_id}.jpg'
-        return render_template('image.html', poke_img=path)
+        pokemon = POKEMONS.pokemon_from_id(img_id)
+        return render_template('image.html', poke_img=path, 
+                               poke_name=pokemon.get('name').capitalize(), 
+                               poke_id=img_id, poke_type=[pokemon.get('type1'), pokemon.get('type2')], 
+                               poke_combat=pokemon.get('combat')[list(pokemon.get('combat').keys())[0]])
     except ValueError:
         if POKEMONS.is_pokemon(img_id.capitalize()):
             id = POKEMONS.image_from_name(img_id)
             path = f'img/pokemon{id}.jpg'
-            return render_template('image.html', poke_img=path)
+            pokemon = POKEMONS.pokemon_from_name(img_id)
+            return render_template('image.html', poke_img=path, 
+                               poke_name=img_id.capitalize(), 
+                               poke_id=id, poke_type=[pokemon.get('type1'), pokemon.get('type2')], 
+                               poke_combat=pokemon.get('combat')[list(pokemon.get('combat').keys())[0]])
         else:
             return jsonify({'error': 'Not supported path.', 'endpoint': f'/api/pokemon-images/{img_id}/show'})
 
