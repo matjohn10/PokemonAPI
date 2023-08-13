@@ -4,9 +4,108 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image</title>
+    <link rel="stylesheet" href="../../../static/image.css" />
+    <title>{{poke_name}}</title>
   </head>
   <body>
-    <img src="{{ url_for('static', filename=poke_img) }}" alt="Pokemon Image" />
+    <div class="svg-arrow">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="60"
+        height="60"
+        fill="currentColor"
+        class="bi bi-arrow-left svg-arrow-img"
+        viewBox="0 0 16 16"
+        id="IconChangeColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+          id="mainIconPathAttribute"
+          fill="#ffffff"
+          stroke-width="0"
+          stroke="#ff0000"
+          filter="url(#shadow)"
+        ></path>
+        <filter id="shadow">
+          <feDropShadow
+            id="shadowValue"
+            stdDeviation="0.5"
+            dx="0"
+            dy="0"
+            flood-color="white"
+          ></feDropShadow>
+        </filter>
+        <filter id="shadow">
+          <feDropShadow
+            id="shadowValue"
+            stdDeviation=".5"
+            dx="0"
+            dy="0"
+            flood-color="white"
+          ></feDropShadow>
+        </filter>
+        <filter id="shadow">
+          <feDropShadow
+            id="shadowValue"
+            stdDeviation=".5"
+            dx="0"
+            dy="0"
+            flood-color="white"
+          ></feDropShadow>
+        </filter>
+        <filter id="shadow">
+          <feDropShadow
+            id="shadowValue"
+            stdDeviation=".5"
+            dx="0"
+            dy="0"
+            flood-color="white"
+          ></feDropShadow>
+        </filter>
+      </svg>
+    </div>
+    <div class="main-pokeimg-page-container">
+      <h1 class="random-h1">Randomizer</h1>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front" id="{{poke_type[0]}}">
+            <div class="pokeimg">
+              <img
+                src="{{ url_for('static', filename=poke_img) }}"
+                alt="Avatar"
+                style="width: 300px; height: 300px"
+              />
+            </div>
+            <div class="pokename">{{poke_name}}</div>
+            <div class="pokeimg-info-container">
+              {% if poke_type[1]: %}
+              <p>{{poke_type[0]}}</p>
+              <p>{{poke_type[1]}}</p>
+              {% else %}
+              <p>{{poke_type[0]}}</p>
+              {% endif %}
+            </div>
+          </div>
+          <div class="flip-card-back" id="{{poke_type[0]}}">
+            <div class="poke-combat">
+              <h2>Strength</h2>
+              {% for type in poke_combat.get('Strong attack') %}
+              <p>{{type}}</p>
+              {%endfor%}
+            </div>
+            <div class="poke-combat">
+              <h2>Weakness</h2>
+              {% for type in poke_combat.get('Weak defence') %}
+              <p>{{type}}</p>
+              {%endfor%}
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="random-btn">Random Pokemon</button>
+    </div>
+    <script type="text/javascript" src="../../../static/image.js"></script>
   </body>
 </html>
+
